@@ -29,6 +29,7 @@ app.use((req,res,next)=>{
     heading:'We will be right back',
     para:"The site is currently being updated"
   });
+  next();
 });
 
 app.use(express.static(__dirname + '/public'))
