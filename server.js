@@ -2,6 +2,8 @@ const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
 
+const port=process.env.PORT || 3000;
+
 var app=express();
 
 hbs.registerPartials(__dirname +'/views/partials')//To register for partials.Partials are used to avoid same code in our viewd files
@@ -59,6 +61,6 @@ res.send({
   errorMessage: 'You got a error message'
 })
 );
-app.listen(3000);
-
-console.log('Server up on 3000');
+app.listen(port,()=>{
+  console.log(`Server up on ${port}`)
+  });
